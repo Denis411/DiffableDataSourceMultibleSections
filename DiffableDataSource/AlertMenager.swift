@@ -10,7 +10,7 @@ import UIKit
 final class AlertMenager {
     static let shared = AlertMenager()
     
-    func createAlert(action: @escaping (String) -> ()) {
+    func createAlert(action: @escaping (String) -> ()) ->  UIAlertController {
         let alert = UIAlertController(title: "Add", message: "Add a city to the list", preferredStyle: .alert)
         alert.addTextField(configurationHandler: nil)
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -22,5 +22,6 @@ final class AlertMenager {
             action(text)
         }
         alert.addAction(add)
+        return alert
     }
 }
