@@ -9,6 +9,8 @@ import UIKit
 
 class VC: UIViewController {
     var tableView: UITableView!
+    var listOfWords: [String] = []
+    var DDS: UITableViewDiffableDataSource<Sections, String>!
     
     override func loadView() {
         tableView = UITableView()
@@ -19,10 +21,12 @@ class VC: UIViewController {
         super.viewDidLoad()
         prettifyTableView()
         customizeNavBar()
+        configeDDS()
     }
     
     func prettifyTableView() {
         tableView.backgroundColor = .blue
+        tableView.register(Cell.self, forCellReuseIdentifier: Cell.identifier)
     }
     
     func customizeNavBar() {
@@ -36,8 +40,29 @@ class VC: UIViewController {
         return button
     }
     
-   @objc func callAlert() {
-        print("all good")
+    @objc func callAlert() {
+        let alert = AlertMenager.shared.createAlert { [unowned self] text in
+            self.listOfWords.append(text)
+            self.makeSnapshotDDS()
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+//    MARK: - Diffable DS
+    
+    func configeDDS() {
+       DDS = UITableViewDiffableDataSource<Sections, String>(tableView: self.tableView) { (tableView, IndexPath, data) -> UITableViewCell in
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: IndexPath) as! Cell
+            cell.textLabel?.text = data
+            return cell
+        }
+    }
+    
+    func makeSnapshotDDS() {
+        var snapshot = NSDiffableDataSourceSnapshot<Sections, String>()
+        snapshot.appendSections([.primary])
+        snapshot.appendItems(listOfWords, toSection: .primary)
+        DDS.apply(snapshot)
     }
 }
 

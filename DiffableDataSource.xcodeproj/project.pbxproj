@@ -14,6 +14,8 @@
 		96912FC3276B24BC0038C503 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96912FC2276B24BC0038C503 /* Assets.xcassets */; };
 		96912FC6276B24BC0038C503 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96912FC4276B24BC0038C503 /* LaunchScreen.storyboard */; };
 		96912FCF276B2B090038C503 /* AlertMenager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96912FCE276B2B090038C503 /* AlertMenager.swift */; };
+		96912FD1276B2E050038C503 /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96912FD0276B2E050038C503 /* Sections.swift */; };
+		96912FD3276B30510038C503 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96912FD2276B30510038C503 /* Cell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		96912FC5276B24BC0038C503 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96912FC7276B24BC0038C503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96912FCE276B2B090038C503 /* AlertMenager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMenager.swift; sourceTree = "<group>"; };
+		96912FD0276B2E050038C503 /* Sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sections.swift; sourceTree = "<group>"; };
+		96912FD2276B30510038C503 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				96912FBD276B24B60038C503 /* VC.swift */,
 				96912FC7276B24BC0038C503 /* Info.plist */,
 				96912FCE276B2B090038C503 /* AlertMenager.swift */,
+				96912FD0276B2E050038C503 /* Sections.swift */,
+				96912FD2276B30510038C503 /* Cell.swift */,
 			);
 			path = DiffableDataSource;
 			sourceTree = "<group>";
@@ -148,10 +154,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96912FD1276B2E050038C503 /* Sections.swift in Sources */,
 				96912FCF276B2B090038C503 /* AlertMenager.swift in Sources */,
 				96912FBE276B24B60038C503 /* VC.swift in Sources */,
 				96912FBA276B24B60038C503 /* AppDelegate.swift in Sources */,
 				96912FBC276B24B60038C503 /* SceneDelegate.swift in Sources */,
+				96912FD3276B30510038C503 /* Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
