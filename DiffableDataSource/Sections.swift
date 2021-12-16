@@ -8,6 +8,6 @@
 import Foundation
 
 enum Sections {
-    case primary
-    case secondary
+    case top
+    case bottom
 }
